@@ -73,7 +73,7 @@ class TestUser < ActiveSupport::TestCase
 
   #validates :permalink, format:     { with: /\A[\w+]+\z/ }
   test "permalink must be alphanumeric" do
-    @user.permalink = "whatthe@#&!"
+    @user.permalink = "whatthe@#&!_"
     refute @user.valid?, "permalink alphanumeric"
     refute_empty @user.errors[:permalink]
   end
